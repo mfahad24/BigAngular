@@ -1,8 +1,6 @@
-(function () {
+// (function () {
 
-	function (){}
-
-
+// 	function (){}
 
 
 
@@ -16,9 +14,11 @@
 
 
 
-	angular
-	.module("app")
-	.factory("service", service);
 
 
-})();
+// 	angular
+// 	.module("app")
+// 	.factory("service", service);
+
+
+// })();
