@@ -1,32 +1,31 @@
 (function() {
 
-  function challengeService() {
-    var savedNames = [];
-    return {
-      getNames: getNames,
-      sendNames: sendNames
-    }
+    function challengeService() {
+        var savedNames = [];
+        var longest;
+        return {
+            getNames: getNames,
+            sendNames: sendNames
+        }
 
-    function sendNames(names) {
-      savedNames = names;
-			console.log(savedNames);
-			var longest = savedNames[0];
-			savedNames.forEach(function(name){
-				if (name.length > longest.length) {
-					longest = name;
-				}
-			})
-			return longest;
-    }
+        function sendNames(names) {
+            savedNames = names;
+            longest = savedNames[0];
+            for (var i = 0; i < savedNames.length; i++) {
+                if (savedNames[i].length > longest.length) {
+                    longest = savedNames[i];
+                }
+            }
+        }
 
-    function getNames() {
-      return savedNames;
-
+        function getNames() {
+            var finish = longest;
+            return finish;
+        }
     }
-  }
-  angular
-    .module("app")
-    .factory("challengeService", challengeService);
+    angular
+        .module("app")
+        .factory("challengeService", challengeService);
 
 
 })();

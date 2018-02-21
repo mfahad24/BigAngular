@@ -3,17 +3,16 @@
     function getAPIservice($http) {
         var displayMatch = [];
         return {
-            setData: setData,
-            getData: getData
+            fetchLoveMatch: fetchLoveMatch
         };
 
-        function setData(name1, name2) {
+        function fetchLoveMatch(name1, name2) {
         	displayMatch = [name1, name2];
         	console.log(displayMatch);
             return $http({
                 method: "GET",
                 url: "https://love-calculator.p.mashape.com/getPercentage",
-                data: {
+                params: {
                     "fname": displayMatch[0],
                     "sname": displayMatch[1]
                 },
@@ -21,13 +20,11 @@
                     "X-Mashape-Key": "6ztBrD7RNbmshbzNlpRGdGnTwkHsp12NtFIjsnKIDYfYN1wo20",
                     "Accept": "application/json"
                 }
+            }).then(function(response) {
+            	return response.data;
             }).catch(function(err) {
             	console.log(err);
             }); 
-        }
-
-        function getData() {
-            return displayMatch;
         }
 
     }

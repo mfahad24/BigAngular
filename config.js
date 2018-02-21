@@ -8,7 +8,10 @@
 			template: "<love-component></love-component>"
 		})
 		.when("/longest", {
-			template: "<component></component>"
+			template: "<challenge-component></challenge-component>"
+		})
+		.when("/display", {
+			template: "<display-component></display-component>"
 		})
 		.otherwise({redirectTo: "/love"});
 	});
