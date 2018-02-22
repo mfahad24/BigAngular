@@ -2,5 +2,9 @@ a {
 	margin: 10px;
 }
 input {
+	padding: 5px;
 	margin: 10px;
+}
+body {
+	background-color: lightblue;
 }
